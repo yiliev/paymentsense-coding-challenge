@@ -1,0 +1,56 @@
+<div class="card mt-4" *ngIf="country">
+    <img [src]="country.flag" class="card-img-top" [alt]="country.name" />
+
+    <div class="card-body">
+        <h1>
+            {{ country.name }}
+        </h1>
+
+        <dl>
+            <dt>
+                Population:
+            </dt>
+            <dd>{{ country.population }}</dd>
+
+            <dt>
+                Time zones:
+            </dt>
+            <dd>{{ country.timezones }}</dd>
+
+            <dt>
+                Currencies:
+            </dt>
+            <dd>
+                <ul>
+                    <li *ngFor="let item of country.currencies">{{ item.code }} {{ item.name }} {{ item.symbol }}</li>
+                </ul>
+            </dd>
+
+            <dt>
+                Languages:
+            </dt>
+            <dd>
+                <ul>
+                    <li *ngFor="let item of country.languages">{{ item.name }}</li>
+                </ul>
+            </dd>
+
+            <dt>
+                Capital city:
+            </dt>
+            <dd>{{ country.capital }}</dd>
+
+            <dt>
+                Bordering countries:
+            </dt>
+            <dd>
+                <ul>
+                    <li *ngFor="let item of country.borders">{{ item }}</li>
+                </ul>
+            </dd>
+
+        </dl>
+
+
+    </div>
+</div>

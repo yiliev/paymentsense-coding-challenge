@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="container-fluid d-flex justify-content-between">
+      <a class="navbar-brand" href="/">
+        <img width="50%" alt="Paymentsense Logo" src="../assets/img/paymentsense-logo.svg">
+      </a>
+
+      <button class="navbar-toggler" type="button" (click)="toggleNavbar()" data-bs-toggle="collapse" data-bs-target="#navbarCollapsableContent" aria-controls="navbarCollapsableContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse flex-grow-0 mt-md-0 mt-4" [ngClass]="{ 'show': isMenuExpanded }" id="navbarCollapsableContent">
+        <form class="d-flex" (ngSubmit)="onSearchSubmit()">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            [(ngModel)]="term"
+            name="searchTerm"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+        <div class="ms-md-4 text-end mt-2 mt-md-0">
+          <span class="d-inline-block me-2">
+            API Status:
+          </span>
+          <fa-icon
+            [icon]=paymentsenseCodingChallengeApiActiveIcon
+            [styles]="{ 'stroke': paymentsenseCodingChallengeApiActiveIconColour, 'color': paymentsenseCodingChallengeApiActiveIconColour }"
+          ></fa-icon>
+        </div>
+      </div>
+  </div>
+</nav>

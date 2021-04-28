@@ -1,0 +1,10 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <app-countries-list [countries]="filteredCountries" (onCountrySelect)="onCountrySelect($event)"></app-countries-list>
+        </div>
+        <div class="col-6">
+            <app-country-details [country]="selectedCountry"></app-country-details>
+        </div>
+    </div>
+</div>
